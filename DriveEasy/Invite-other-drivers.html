@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Invite Other Drivers</title>
+      <style>
+            
+            body {
+                  font-family: Arial, sans-serif;
+                  max-width: 800px;
+                  margin: auto;
+                  padding: 20px;
+            }
+
+            .step {
+                  margin-bottom: 40px;
+                  border-bottom: 1px solid #ddd;
+                  padding-bottom: 20px;
+            }
+
+            img {
+                  max-width: 100%;
+                  border-radius: 6px;
+                  margin-top: 10px;
+                  border: 1px solid #ccc;
+            }
+
+            label {
+                  font-size: 18px;
+                  display: flex;
+                  align-items: center;
+            }
+
+            input[type="checkbox"] {
+                  transform: scale(1.5);
+                  margin-right: 10px;
+            }
+
+            a.back-link {
+                  text-decoration: none;
+                  display: inline-block;
+                  margin-bottom: 20px;
+                  font-size: 16px;
+                  color: #005baa;
+            }
+
+      </style>
+</head>
+<body>
+
+ <a href="../DriveEasy.html" class="back-link">← Back to DriveEasy Procedure List</a>
+      <h1>Invite Other Drivers</h1>
+
+      <div class="step">
+            <label><input type="checkbox" id="step1"> Step 1: Sign in to the GEICO App</label>
+            <p>Open the GEICO app and tap on the <strong>"Login"</strong> button to sign in with the policyholder’s
+                  credentials.</p>
+            <img src="Step1-login.jpeg" alt="login screen">
+      </div>
+      
+      <div class="step">
+            <label><input type="checkbox" id="step2"> Step 2: Access to Settings.</label>
+            <p>Once accessed to the GEICO app go to the top right corner to the  <strong>settings symbol</strong> button.</p>
+            <img src="step2-settings.jpeg" alt="settings screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step3"> Step 3: DriveEasy Settings.</label>
+            <p>Once accessed to the settings screen, proceed to the <strong>"DriveEasy"</strong> section.</p>
+            <img src="step3-driveeasy-settings.jpeg" alt="driveEasy Settings screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step4"> Step 4: Driver Profiles.</label>
+            <p>Access to the <strong>"Driver Profiles"</strong>option to access to other drivers information for driveEasy.</p>
+            <img src="step4-drivers-profile.jpeg" alt="drivers profile screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step5"> Step 5: Invite Driver. </label>
+            <p>In this page the PH will see all the drivers that can be invited to their driveEasy program, advise them to click on the option <strong>"invite"</strong>
+            next to the name of the desired driver.</p>
+            <img src="step5-invite-drivers.jpeg" alt="invite screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step6"> Step 6: Verify Phone Number of Driver.</label>
+            <p>Once selected the driver to invite confirm the phone number to send invitation (make sure is the phone number registered in telematics in order to be accepted
+            in the program).</p>
+            <img src="step6-verify-number-to-invite.jpeg" alt="verify number screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step7"> Step 7: </label>
+            <p>This is the last step!. Advise ph that one pop-up screen / sms screen will show and is to send the invitation to the desired driver, once this step has been
+            completed the desired driver to enroll needs to open this link to complete the enrollment process.</p>
+            <img src="step7-send-invitation.jpeg" alt="send invitation screen">
+      </div>
+
+
+
+      <script>
+            const steps = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7'];
+
+            steps.forEach(id => {
+                  const checkbox = document.getElementById(id);
+                  checkbox.checked = localStorage.getItem(id) === 'true';
+
+                  checkbox.addEventListener('change', () => {
+                        localStorage.setItem(id, checkbox.checked);
+                  });
+            });
+      </script>
+</body>
+</html>

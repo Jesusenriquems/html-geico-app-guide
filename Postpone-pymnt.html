@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Billing - Postpone Payment</title>
+      <style>
+          body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    .step {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+    }
+    label {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.5);
+      margin-right: 10px;
+    }
+    a.back-link {
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #005baa;
+    }
+      </style>
+</head>
+<body>
+      <a href="index.html" class="back-link">← Back to Procedure List</a>
+      <h1>Postpone Payment</h1>
+   
+      <div class="step">
+            <label><input type="checkbox" id="step1"> Step 1: Sign in to the GEICO App.</label>
+            <p>Open the GEICO app and tap on the <strong>"Login"</strong> button to sign in with the policyholder’s credentials.</p>
+            <img src="./DriveEasy/Step1-login.jpeg" alt="login screen">
+      </div>    
+
+      <div class="step">
+            <label><input type="checkbox" id="step2"> Step 2: Access to Billing.</label>
+            <p>Access to the billing screen by going to the money symbol on the bottom of the screen.</p>
+            <img src="Assets/step2-billing-logo.jpeg" alt="Dashboard screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step3"> Step 3: Make Changes to Upcoming Payments.</label>
+            <p>Select the option <strong>"Make changes to your upcoming Auto Pay payment"</strong> <br>(Note: see in example the current due date to compare with final step once process is complete).</p>
+            <img src="Assets/step3-make-change-upcoming-pymt.jpeg" alt="billing screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step4"> Step 4: Change Your Auto Pay Schedule Date.</label>
+            <p>Select the option <strong>"Change Your Auto Pay Schedule Date"</strong> to access the desired date to change the date of next payment.</p>
+            <img src="Assets/step4-change-autopay-schdle.jpeg" alt="payment schedule changes screen">
+      </div>
+      
+      <div class="step">
+            <label><input type="checkbox" id="step5"> Step 5: Select Date of Next Payment.</label>
+            <p>Select the calendar symbol to access the available dates to postpone payment (advise ph they can only postpone up to 9 days after their due date). </p>
+            <img src="Assets/step5-select-calendar.jpeg" alt="date change screen"> <br> <img src="Assets/step6-select-date.jpeg" alt="select date screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step6"> Step 6: Accept changes. </label>
+            <p>Select the option <strong>"Continue"</strong> to accept the change of due date for next payment.</p>
+            <img src="Assets/step7-select-continue.jpeg" alt="accept schedule changes screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step7"> Step 7: Confirm Changes.</label>
+            <p>That's it!, confirm with ph that their due date has changed to the new date.</p>
+            <img src="Assets/step8-verify-changes.jpeg" alt="verify changes screen">
+      </div>
+
+
+
+
+
+  <script>
+    const steps = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7'];
+
+    steps.forEach(id => {
+      const checkbox = document.getElementById(id);
+      checkbox.checked = localStorage.getItem(id) === 'true';
+
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(id, checkbox.checked);
+      });
+    });
+  </script>
+
+</body>
+</html>

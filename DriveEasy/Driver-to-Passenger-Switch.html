@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Update Trip Status</title>
+      <style>
+            body {
+                  font-family: Arial, sans-serif;
+                  max-width: 800px;
+                  margin: auto;
+                  padding: 20px;
+            }
+
+            .step {
+                  margin-bottom: 40px;
+                  border-bottom: 1px solid #ddd;
+                  padding-bottom: 20px;
+            }
+
+            img {
+                  max-width: 100%;
+                  border-radius: 6px;
+                  margin-top: 10px;
+                  border: 1px solid #ccc;
+            }
+
+            label {
+                  font-size: 18px;
+                  display: flex;
+                  align-items: center;
+            }
+
+            input[type="checkbox"] {
+                  transform: scale(1.5);
+                  margin-right: 10px;
+            }
+
+            a.back-link {
+                  text-decoration: none;
+                  display: inline-block;
+                  margin-bottom: 20px;
+                  font-size: 16px;
+                  color: #005baa;
+            }
+      </style>
+</head>
+
+<body>
+      <a href="../DriveEasy.html" class="back-link">← Back to DriveEasy Procedure List</a>
+      <h1>Change Role in DriveEasy</h1>
+
+      <div class="step">
+            <label><input type="checkbox" id="step1"> Step 1: Sign in to the GEICO App</label>
+            <p>Open the GEICO app and tap on the <strong>"Login"</strong> button to sign in with the policyholder’s
+                  credentials.</p>
+            <img src="Step1-login.jpeg" alt="login screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step2"> Step 2: Select Your Auto Policy</label>
+            <p>(If applicable) Advise customer after they login to select their auto policy to in order to access to
+                  change the trip Status</p>
+            <img src="step2-select-policy.jpeg" alt="Select Auto Policy">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step3"> Step 3: Select DriveEasy Dashboard</label>
+            <p>Advise PH that after they get into their Auto Policy, they must get into the DriveEasy Dashboard (they
+                  will identify it under the score with blue letters)</p>
+            <img src="step3-driveeasy-dashboard.jpeg" alt="Select DriveEasy Details">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step4"> Step 4: Access to the Specific Trip Details</label>
+            <p>Once PH has access to the DriveEasy Dashboard advise them to go to the most recent trip / trip they want
+                  to update and advise them to go to <strong>"View Trip Details"</strong></p>
+            <img src="step4-trip-details.jpeg" alt="Select Trip Details">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step5"> Step 5: Change Role</label>
+            <p>After PH locates their desired trip to update and access to the trip details they will see the option
+                  available named <strong>"Change Role"</strong>, advise them to click in there.</p>
+            <img src="step5-change-role.jpeg" alt="Select Change Role">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step6"> Step 6: Select Correct Role</label>
+            <p>Ask PH to select the desired role they want to apply to the trip. (Most likely they want to switch to passenger)</p>
+            <img src="step6-select-role.jpeg" alt="Select Correct Role">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step7"> Step 7: Agree to Terms (If asked)</label>
+            <p>(If applicable) Advise customer if asked, to accept the changes for that trip.</p>
+            <img src="Step7-Agree-and-complete-changes.jpeg" alt="Agree to terms and changes">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step8"> Step 8: That's it!</label>
+            <p>You made it!, after you complete the previous step, the PH will be able to see the updated status for that trip.</p>
+            <img src="step8-thats-it.jpeg" alt="thats it">
+      </div>
+
+
+      <script>
+            const steps = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7', 'step8'];
+
+            steps.forEach(id => {
+                  const checkbox = document.getElementById(id);
+                  checkbox.checked = localStorage.getItem(id) === 'true';
+
+                  checkbox.addEventListener('change', () => {
+                        localStorage.setItem(id, checkbox.checked);
+                  });
+            });
+      </script>
+</body>
+
+</html>

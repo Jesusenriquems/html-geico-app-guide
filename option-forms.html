@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GEICO - Option Forms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    .step {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+    }
+    label {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.5);
+      margin-right: 10px;
+    }
+    a.back-link {
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #005baa;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link">← Back to Procedure List</a>
+  <h1>Option Forms</h1>
+  <p>Follow the steps below to access the policy update that includes the option forms.</p>
+
+  <div class="step">
+    <label><input type="checkbox" id="step1"> Step 1: Sign in to the GEICO App</label>
+    <p>Open the GEICO app and tap on the <strong>"Login"</strong> button to sign in with the policyholder’s credentials.</p>
+    <img src="./DriveEasy/Step1-login.jpeg" alt="login screen">
+  </div>
+
+  <div class="step">
+    <label><input type="checkbox" id="step2"> Step 2: Tap "You Have a Saved Quote for a Policy Update"</label>
+    <p>Once logged in, locate the section that says <strong>"You Have a Saved Quote for a Policy Update"</strong> and tap it. This will give you access to the quote containing the required forms.</p>
+    <img src="step2-saved-quote.jpg" alt="Saved Quote for a Policy Update">
+  </div>
+
+  <div class="step">
+    <label><input type="checkbox" id="step3"> Step 3: Select the correct quote</label>
+    <p>Select the correct quote you need to sign the forms for — ideally by using the <strong>quote number</strong> (preferred), or by quote type (in this example, it’s a <strong>Coverage Change</strong> quote). Then, tap the <strong>“Select Quote”</strong> button.</p>
+    <img src="step3-select-quote.jpg" alt="Select Quote Screen">
+  </div>
+
+  <div class="step">
+    <label><input type="checkbox" id="step4"> Step 4: Sign Forms</label>
+    <p>Advise PH that after they select the right quote advance until the end of the quote until they see a blue button named <strong>Sign Forms</strong></p>
+    <img src="step4-sign-forms-quote.jpeg" alt="sign forms Screen">
+  </div>
+
+  <div class="step">
+    <label><input type="checkbox" id="step5"> Step 5: All Done!</label>
+    <p>I made it!</p>
+    <img src="Well-done.jpeg" alt="well done screen">
+  </div>
+
+  <script>
+    const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
+
+    steps.forEach(id => {
+      const checkbox = document.getElementById(id);
+      checkbox.checked = localStorage.getItem(id) === 'true';
+
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(id, checkbox.checked);
+      });
+    });
+  </script>
+</body>
+</html>

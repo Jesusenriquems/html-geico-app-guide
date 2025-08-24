@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>GEICO App - Timeline</title>
+      <style>
+            body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      .step {
+        margin-bottom: 40px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 6px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+      }
+      label {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+      }
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 10px;
+      }
+      a.back-link {
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #005baa;
+      }
+        </style>
+</head>
+<body>
+      <a href="index.html" class="back-link">← Back to Procedure List</a>
+      <h1>GEICO App timeline</h1> 
+
+  <div class="step">
+    <label><input type="checkbox" id="step1"> Step 1: Sign in to the GEICO App</label>
+    <p>Once logged in, locate the section that says <strong>"You Have a Saved Quote for a Policy Update"</strong> and tap it. This will give you access to the quote containing the required forms.</p>
+    <img src="./DriveEasy/Step1-login.jpeg" alt="login screen">
+  </div>
+
+  <div class="step">
+      <label><input type="checkbox" id="step2"> Step 2: Access to "Policy".</label>
+      <p>Click in the <strong>"Policy"</strong> symbol on the bottom of the  screen.</p>
+      <img src="Assets/step2-select-policy-symbol.jpeg" alt="Dashboard screen">
+    </div>
+
+    <div class="step">
+      <label><input type="checkbox" id="step3"> Step 3: Account History.</label>
+      <p>Once ph is on the policy page, advise to click on the option <strong>"Account History"</strong> for them to access to their timeline.</p>
+      <img src="Assets/step3-select-policy-history.jpeg" alt="policy screen">
+    </div>
+
+    <div class="step">
+      <label><input type="checkbox" id="step4"> Step 4: Explore Timeline.</label>
+      <p>At this point, the policyholder will see their timeline and fine multiple information such as: <br>
+            <strong>
+            - Time of Policy History.<br>
+            - Transaction Type. <br>
+            - The date and time of the Transaction. <br>
+            - Title and description of transaction itself.
+      </strong>
+      </p>
+      <img src="Assets/step4-explore-timeline.jpeg" alt="Saved Quote for a Policy Update">
+    </div>
+
+    <div class="step">
+      <label><input type="checkbox" id="step5"> Special Note: Transaction Type.</label>
+      <p>By clicking in the <strong>"Transaction Type"</strong> button the policyholder will be able to filter by the type of transaction they want to verify. <br>
+      (<strong>Note:</strong> This timeline from the GEICO app will NOT show policy notes or other changes that are only vissible for agents such as UW changes.)</p>
+      <img src="Assets/step5-additional-filters.jpeg" alt="Saved Quote for a Policy Update">
+    </div>
+
+
+
+  <script>
+    const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
+
+    steps.forEach(id => {
+      const checkbox = document.getElementById(id);
+      checkbox.checked = localStorage.getItem(id) === 'true';
+
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(id, checkbox.checked);
+      });
+    });
+  </script>
+</body>
+</html>

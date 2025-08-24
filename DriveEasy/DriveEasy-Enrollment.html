@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>DriveEasy Enrollment</title>
+
+      <style>
+            body {
+                  font-family: Arial, sans-serif;
+                  max-width: 800px;
+                  margin: auto;
+                  padding: 20px;
+            }
+
+            .step {
+                  margin-bottom: 40px;
+                  border-bottom: 1px solid #ddd;
+                  padding-bottom: 20px;
+            }
+
+            img {
+                  max-width: 100%;
+                  border-radius: 6px;
+                  margin-top: 10px;
+                  border: 1px solid #ccc;
+            }
+
+            label {
+                  font-size: 18px;
+                  display: flex;
+                  align-items: center;
+            }
+
+            input[type="checkbox"] {
+                  transform: scale(1.5);
+                  margin-right: 10px;
+            }
+
+            a.back-link {
+                  text-decoration: none;
+                  display: inline-block;
+                  margin-bottom: 20px;
+                  font-size: 16px;
+                  color: #005baa;
+            }
+      </style>
+</head>
+
+<body>
+
+      <a href="../DriveEasy.html" class="back-link">← Back to DriveEasy Procedure List</a>
+      <h1>DriveEasy Enrollment</h1>
+
+      <div class="step">
+            <label><input type="checkbox" id="step1"> Step 1: Access to DriveEasy</label>
+            <p>BEFORE login with credentials advise PH to click in the option under the login credentials marked with a
+                  steering weels with the name <strong>"DriveEasy"</strong>.</p>
+            <img src="Step1-login.jpeg" alt="login screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step2"> Step 2: Register with Phone</label>
+            <p>Advise PH to introduce the phone number they used to register in DriveEasy.</p>
+            <img src="Step2-add-number.jpeg" alt="add number screen"> 
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step3"> Step 3: Allow Location</label>
+            <p>PH MUST accept the location permition FIRST in order to proceed with other permitions and advise them to make sure and accept the <strong>"precise location"</strong>.</p>
+            <img src="Step3-accept-location.jpeg" alt="accept location tracking screen">      
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step4"> Step 4: Accep Remaining Permitions</label>
+            <p>Once the location tracking has been allowed, advise PH to accept remaining permitions that appear on their screen in order to successfully enroll in DriveEasy.</p>
+            <img src="Step4-accept-other-perms.jpeg" alt="accept remaining perms screen">                  
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step5"> Step 5: Access to DriveEasy</label>
+            <p><strong>If apply</strong>PH at this point, PH will be require to type the phone numbers of other drivers listed on the policy that were added to the DriveEasy program.</p>
+            <img src="Step5-add-other-drivers-phone.jpeg" alt="add other drivers phones screen">
+      </div>
+
+      <div class="step">
+            <label><input type="checkbox" id="step6"> Step 6: Enrollment Complete!</label>
+            <p>Congratulations!, you have completed the enrollment process, now you can advise the PH that after they see this screen below on their phone, they can access now to their GEICO App
+            and they will be able to see their driveEasy Dashboard once they login!. </p>
+            <img src="step6-enrollment-complete.jpeg" alt="enrollment complete screen">      
+      </div>
+
+            <script>
+                  const steps = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6'];
+      
+                  steps.forEach(id => {
+                        const checkbox = document.getElementById(id);
+                        checkbox.checked = localStorage.getItem(id) === 'true';
+      
+                        checkbox.addEventListener('change', () => {
+                              localStorage.setItem(id, checkbox.checked);
+                        });
+                  });
+            </script>
+</body>
+
+</html>
+
