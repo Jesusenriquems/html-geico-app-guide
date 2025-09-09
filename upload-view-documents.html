@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>GEICO App - View / Upload Documents</title>
+      <style>
+            body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      .step {
+        margin-bottom: 40px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 6px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+      }
+      label {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+      }
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 10px;
+      }
+      a.back-link {
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #005baa;
+      }
+        </style>
+</head>
+<body>
+      <a href="index.html" class="back-link">← Back to Procedure List</a>
+      <h1>View and Upload Documents</h1> <hr>
+
+  <div class="step">
+    <label><input type="checkbox" id="step1"> Step 1: Sign in to the GEICO App</label>
+    <p>Open the GEICO app and tap on the <strong>"Login"</strong> button to sign in with the policyholder’s credentials.</p>
+    <img src="./DriveEasy/Step1-login.jpeg" alt="login screen">
+  </div>
+
+  <div class="step">
+      <label><input type="checkbox" id="step2"> Step 2: Access to "Policy".</label>
+      <p>Click in the <strong>"Policy"</strong> symbol on the bottom of the  screen.</p>
+      <img src="Assets/step2-select-policy-symbol.jpeg" alt="Dashboard screen">
+    </div>
+
+    <div class="step">
+      <label><input type="checkbox" id="step3"> Step 3: Policy Documents.</label>
+      <p>Once ph is on the policy page, advise to click on the option <strong>"policy Documents"</strong>.</p>
+      <img src="Assets/step3-policy-documents.jpeg" alt="policy screen">
+    </div>
+
+    <div class="step">
+      <label><input type="checkbox" id="step4"> Step 4: View or Upload Documents</label>
+      <p>At this point, the policyholder will see two options (view documents or upload documents).</p>
+      <img src="Assets/step4-view-upload-docs.jpeg" alt="view or upload docs">
+    </div>
+
+    <div class="step">
+      <label><input type="checkbox" id="step5"> Special Note: View Documents.</label>
+      <p>By clicking in the <strong>"View Documents"</strong> button the policyholder will be able to see multiple Documents such as the ones shown in the image below.</p>
+      <img src="Assets/step5-view-dcos.jpeg" alt="view docs options">
+    </div>
+
+
+
+  <script>
+    const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
+
+    steps.forEach(id => {
+      const checkbox = document.getElementById(id);
+      checkbox.checked = localStorage.getItem(id) === 'true';
+
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(id, checkbox.checked);
+      });
+    });
+  </script>
+</body>
+</html>

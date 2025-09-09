@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Billing Schedule</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    .step {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+    }
+    label {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.5);
+      margin-right: 10px;
+    }
+    a.back-link {
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #005baa;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link">← Back to Procedure List</a>
+  <h1>Billing Schedule</h1> <hr>
+
+  <div class="step">
+    <label><input type="checkbox" id="step1"> Step 1: Sign in to the GEICO App</label>
+    <p>Open the GEICO app and tap on the <strong>"Login"</strong> button to sign in with the policyholder’s credentials.</p>
+    <img src="./DriveEasy/Step1-login.jpeg" alt="login screen">
+  </div>
+
+  <div class="step">
+      <label><input type="checkbox" id="step2"> Step 2: Access to Billing.</label>
+      <p>Access to the billing screen by going to the money symbol on the bottom of the screen.</p>
+      <img src="Assets/step2-billing-logo.jpeg" alt="Dashboard screen">
+  </div>
+
+  <div class="step">
+    <label><input type="checkbox" id="step3"> Step 3: Select Billing Schedule</label>
+    <p>Once the policyholder is on the Billing page, advise them to go to the "Billing Schedule"</p>
+    <img src="Assets/step3-billing-schedule.jpeg" alt="Select billing schedule">
+  </div>
+
+  <div class="step">
+    <label><input type="checkbox" id="step4"> Step 4: Review Billing Schedule</label>
+    <p>You made it! in here they will be able to see the amount and their schdule for the following payments.</p>
+    <img src="Assets/step4-view-billing-schedule.jpeg" alt="sign forms Screen">
+  </div>
+
+  <div class="step">
+    <label><input type="checkbox" id="step5"> Step 5: All Done!</label>
+    <p>I made it!</p>
+    <img src="Well-done.jpeg" alt="well done screen">
+  </div>
+
+  <script>
+    const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
+
+    steps.forEach(id => {
+      const checkbox = document.getElementById(id);
+      checkbox.checked = localStorage.getItem(id) === 'true';
+
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(id, checkbox.checked);
+      });
+    });
+  </script>
+</body>
+</html>
